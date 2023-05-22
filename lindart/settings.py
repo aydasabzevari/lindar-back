@@ -41,8 +41,15 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'djoser',
+    'drf_yasg',
     'api',
 ]
+
+DJOSER = {
+    'SERIALIZERS': {
+        'user_create': 'api.serializers.UserProfileSerializer',
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
