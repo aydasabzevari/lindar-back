@@ -1,6 +1,7 @@
 from rest_framework import generics
 from .models import UserProfile
 from .serializers import UserProfileSerializer
+from djoser.views import UserViewSet
 
 
 class UserProfileRegisterView(generics.CreateAPIView):
@@ -14,3 +15,6 @@ class UserProfileLoginView(generics.RetrieveAPIView):
 
     def get_object(self):
         return self.request.user
+
+class UserProfileViewSet(UserViewSet):
+    serializer_class = UserProfileSerializer
